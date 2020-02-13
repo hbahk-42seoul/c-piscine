@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbahk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:57:18 by hbahk             #+#    #+#             */
-/*   Updated: 2020/01/29 13:05:59 by hbahk            ###   ########.fr       */
+/*   Created: 2020/01/29 05:11:05 by hbahk             #+#    #+#             */
+/*   Updated: 2020/02/14 02:53:26 by hbahk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+void	ft_rev_int_tab(int *tab, int size)
 {
+	int tab_[size];
 	int i;
 
 	i = 0;
-	while (*(str + i))
+	while (i < size)
 	{
-		if (*(str + i) >= 'a' && *(str + i) <= 'z')
-			*(str + i) = *(str + i) + ('A' - 'a');
+		tab_[i] = tab[i];
 		i++;
 	}
-	return (str);
+	i = 0;
+	while (i < size)
+	{
+		tab[i] = tab_[size - 1 - i];
+		i++;
+	}
 }

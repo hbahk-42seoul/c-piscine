@@ -1,33 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbahk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 10:50:11 by hbahk             #+#    #+#             */
-/*   Updated: 2020/01/29 10:50:21 by hbahk            ###   ########.fr       */
+/*   Created: 2020/01/29 00:48:54 by hbahk             #+#    #+#             */
+/*   Updated: 2020/01/29 03:15:20 by hbahk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+void	ft_ultimate_ft(int *********nbr)
 {
-	int i;
-	int flag;
-
-	i = 0;
-	flag = 1;
-	if (*str == '\0')
-		return (1);
-	while (*(str + i) && flag)
-	{
-		if (*(str + i) >= 'a' && *(str + i) <= 'z')
-		{
-			flag = 1;
-			i++;
-		}
-		else
-			flag = 0;
-	}
-	return (flag);
+	*********nbr = 42;
 }

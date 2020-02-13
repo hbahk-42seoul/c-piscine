@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbahk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 16:21:27 by hbahk             #+#    #+#             */
-/*   Updated: 2020/01/30 16:22:09 by hbahk            ###   ########.fr       */
+/*   Created: 2020/01/29 04:24:01 by hbahk             #+#    #+#             */
+/*   Updated: 2020/01/29 04:29:05 by hbahk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int i;
+	int div;
+	int mod;
 
-	i = 0;
-	while (*(str + i))
+	if (*b != 0)
 	{
-		if (*(str + i) >= 'A' && *(str + i) <= 'Z')
-			*(str + i) = *(str + i) - ('A' - 'a');
-		i++;
+		div = *a / *b;
+		mod = *a % *b;
+		*a = div;
+		*b = mod;
 	}
-	return (str);
 }

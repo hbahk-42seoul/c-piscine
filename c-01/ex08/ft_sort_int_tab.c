@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbahk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 16:28:30 by hbahk             #+#    #+#             */
-/*   Updated: 2020/02/10 09:15:07 by hbahk            ###   ########.fr       */
+/*   Created: 2020/01/29 06:10:21 by hbahk             #+#    #+#             */
+/*   Updated: 2020/01/29 06:59:26 by hbahk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char str[])
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int		i;
-	char	a;
+	int flag;
+	int i;
+	int j;
+	int temp;
 
-	i = 0;
-	while (str[i])
+	flag = 1;
+	i = size - 1;
+	while (flag)
 	{
-		if (i > 0)
-			a = str[i - 1];
-		if (a >= '0' && a <='9'
-				|| a >= 'A' && a <= 'Z'
-				|| a >= 'a' && a <= 'z')
-			str[i] = str[i] + ('a' - 'A');
-		else
+		flag = 0;
+		j = 0;
+		while (j < i)
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = str[i] - ('a' - 'A');
+			if (tab[j] > tab[j + 1])
+			{
+				temp = tab[j + 1];
+				tab[j + 1] = tab[j];
+				tab[j] = temp;
+				flag = 1;
+			}
+			j++;
 		}
-		i++;
+		i--;
 	}
-	return (str);
 }

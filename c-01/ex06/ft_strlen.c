@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbahk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 11:20:21 by hbahk             #+#    #+#             */
-/*   Updated: 2020/01/29 11:33:25 by hbahk            ###   ########.fr       */
+/*   Created: 2020/01/29 05:00:22 by hbahk             #+#    #+#             */
+/*   Updated: 2020/01/29 05:07:30 by hbahk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+int		ft_strlen(char *str)
 {
-	int i;
-	int flag;
+	char *p;
 
-	i = 0;
-	flag = 1;
-	if (*str == '\0')
-		return (flag);
-	while (*(str + i) && flag)
-	{
-		if (*(str + i) >= 32 && *(str + i) <= 126)
-		{
-			flag = 1;
-			i++;
-		}
-		else
-			flag = 0;
-	}
-	return (flag);
+	p = str;
+	while (*p != '\0')
+		p++;
+	return (p - str);
 }
